@@ -1,0 +1,137 @@
+{
+  "TollFreeVehicles": [
+    "Motorcycle",
+    "Buss",
+    "Emergency",
+    "Diplomat",
+    "Foreign",
+    "Military"
+  ],
+  "TaxPeriodCost": [
+    {
+      "Period": "06:00-06:29",
+      "Cost": 8
+    },
+    {
+      "Period": "06:30–06:59",
+      "Cost": 13
+    },
+    {
+      "Period": "07:00–07:59",
+      "Cost": 18
+    },
+    {
+      "Period": "08:00–08:29",
+      "Cost": 13
+    },
+    {
+      "Period": "08:30–14:59",
+      "Cost": 8
+    },
+    {
+      "Period": "15:00–15:29",
+      "Cost": 13
+    },
+    {
+      "Period": "15:30–16:59",
+      "Cost": 18
+    },
+    {
+      "Period": "17:00–17:59",
+      "Cost": 13
+    },
+    {
+      "Period": "18:00–18:29",
+      "Cost": 8
+    }
+  ],
+  "ExceptWeekDays": [ "Saturday", "Sunday" ],
+  "ExceptMonths": [ 7 ],
+  "ExceptDates": [
+    {
+      "Year": 2013,
+      "Month": 1,
+      "Day": 1
+    },
+    {
+      "Year": 2013,
+      "Month": 3,
+      "Day": 28
+    },
+    {
+      "Year": 2013,
+      "Month": 3,
+      "Day": 29
+    },
+    {
+      "Year": 2013,
+      "Month": 4,
+      "Day": 1
+    },
+    {
+      "Year": 2013,
+      "Month": 4,
+      "Day": 30
+    },
+    {
+      "Year": 2013,
+      "Month": 5,
+      "Day": 1
+    },
+    {
+      "Year": 2013,
+      "Month": 5,
+      "Day": 8
+    },
+    {
+      "Year": 2013,
+      "Month": 5,
+      "Day": 9
+    },
+    {
+      "Year": 2013,
+      "Month": 6,
+      "Day": 5
+    },
+    {
+      "Year": 2013,
+      "Month": 6,
+      "Day": 6
+    },
+    {
+      "Year": 2013,
+      "Month": 6,
+      "Day": 21
+    },
+    {
+      "Year": 2013,
+      "Month": 11,
+      "Day": 1
+    },
+    {
+      "Year": 2013,
+      "Month": 12,
+      "Day": 24
+    },
+    {
+      "Year": 2013,
+      "Month": 12,
+      "Day": 25
+    },
+    {
+      "Year": 2013,
+      "Month": 12,
+      "Day": 26
+    },
+    {
+      "Year": 2013,
+      "Month": 12,
+      "Day": 31
+    }
+  ],
+  "SingleTollTax": {
+    "Enabled": true,
+    "Duration": 60,
+    "CalcMethod": "max"
+  }
+}

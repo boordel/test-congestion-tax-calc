@@ -1808,6 +1808,16 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "CongestionTax.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CongestionTax.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CongestionTax.Core.dll": {}
+        }
       }
     }
   },
@@ -6103,10 +6113,16 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "CongestionTax.Core/1.0.0": {
+      "type": "project",
+      "path": "../CongestionTax.Core/CongestionTax.Core.csproj",
+      "msbuildProject": "../CongestionTax.Core/CongestionTax.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "CongestionTax.Core >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
@@ -6145,7 +6161,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Work\\Self\\.NetCore\\Excercise\\test-congestion-tax-calc\\CongestionTax.Core\\CongestionTax.Core.csproj": {
+              "projectPath": "D:\\Work\\Self\\.NetCore\\Excercise\\test-congestion-tax-calc\\CongestionTax.Core\\CongestionTax.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

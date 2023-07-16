@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.UnitTest", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.Core", "CongestionTax.Core\CongestionTax.Core.csproj", "{C078C18E-FCC2-4DDB-90C8-227B40306385}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.Console", "CongestionTax.Console\CongestionTax.Console.csproj", "{C5620517-D0B6-4CE7-A063-9F053BE53D6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C078C18E-FCC2-4DDB-90C8-227B40306385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C078C18E-FCC2-4DDB-90C8-227B40306385}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C078C18E-FCC2-4DDB-90C8-227B40306385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5620517-D0B6-4CE7-A063-9F053BE53D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5620517-D0B6-4CE7-A063-9F053BE53D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5620517-D0B6-4CE7-A063-9F053BE53D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5620517-D0B6-4CE7-A063-9F053BE53D6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

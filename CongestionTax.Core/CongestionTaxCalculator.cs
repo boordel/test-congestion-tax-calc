@@ -1,14 +1,8 @@
-using System;
+/*using System;
 using congestion.calculator;
 public class CongestionTaxCalculator
 {
-    /**
-         * Calculate the total toll fee for one day
-         *
-         * @param vehicle - the vehicle
-         * @param dates   - date and time of all passes on one day
-         * @return - the total congestion tax for that day
-         */
+
 
     public int GetTax(Vehicle vehicle, DateTime[] dates)
     {
@@ -103,3 +97,4 @@ public class CongestionTaxCalculator
         Military = 5
     }
 }
+*/
