@@ -32,4 +32,6 @@ public class PeriodCost
     private int FromMinute = 0;
     private int ToHour = 0;
     private int ToMinute = 0;
+
+
 }

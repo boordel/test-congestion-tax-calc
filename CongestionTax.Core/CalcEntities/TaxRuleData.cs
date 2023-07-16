@@ -5,5 +5,6 @@ public class TaxRuleData
     public List<PeriodCost> TaxPeriodCost { get; set; } = new();
     public List<string> ExceptWeekDays { get; set; } = new();
     public List<int> ExceptMonths { get; set; } = new();
+    public List<ExceptDate> ExceptDates { get; set; } = new();
     public SingleTollTax SingleTollTax { get; set; } = new();
 }

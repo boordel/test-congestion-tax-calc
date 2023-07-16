@@ -7,8 +7,15 @@ public class TaxRuleHelper
 
     public void LoadRules()
     {
-        string jsonContent = File.ReadAllText("../../../../TaxRules.json");
+        try
+        {
+            string jsonContent = File.ReadAllText("../../../../TaxRules.json");
 
-        RuleData = JsonSerializer.Deserialize<TaxRuleData>(jsonContent);
+            RuleData = JsonSerializer.Deserialize<TaxRuleData>(jsonContent);
+        }
+        catch(Exception ex)
+        {
+            throw new FileNotFoundException(ex.Message);
+        }
     }
 }
