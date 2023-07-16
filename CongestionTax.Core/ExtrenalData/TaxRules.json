@@ -1,5 +1,5 @@
 {
-  "TrollFreeVehicles": [
+  "TollFreeVehicles": [
     "Motorcycle",
     "Buss",
     "Emergency",
@@ -129,7 +129,7 @@
       "Day": "31"
     }
   ],
-  "SingleTrollTax": {
+  "SingleTollTax": {
     "Enabled": "true",
     "Duration": "60",
     "CalcMethod": "max"
