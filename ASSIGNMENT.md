@@ -87,6 +87,4 @@ Just as you finished coding, your manager shows up and tells you that the same a
 
 Move the parameters used by the application to an outside data store of your own choice to be read during runtime by the application.
 
-Please don't cheat in your code with this link!
-https://github.com/volvo-cars/congestion-tax-calculator
 
