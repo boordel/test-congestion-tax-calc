@@ -3,12 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.UnitTest", "CongestionTax.UnitTest\CongestionTax.UnitTest.csproj", "{B075F020-557A-45B6-8DA5-F839A1D2DB0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTax.Core", "CongestionTax.Core\CongestionTax.Core.csproj", "{C078C18E-FCC2-4DDB-90C8-227B40306385}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B075F020-557A-45B6-8DA5-F839A1D2DB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B075F020-557A-45B6-8DA5-F839A1D2DB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B075F020-557A-45B6-8DA5-F839A1D2DB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B075F020-557A-45B6-8DA5-F839A1D2DB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C078C18E-FCC2-4DDB-90C8-227B40306385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C078C18E-FCC2-4DDB-90C8-227B40306385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C078C18E-FCC2-4DDB-90C8-227B40306385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C078C18E-FCC2-4DDB-90C8-227B40306385}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4181620A-E3F3-4C0C-BAE1-3FA59AC3FC35}
 	EndGlobalSection
 EndGlobal
