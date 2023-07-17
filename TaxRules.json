@@ -1,4 +1,5 @@
 {
+  "MaxTollFee": 60,
   "TollFreeVehicles": [
     "Motorcycle",
     "Buss",

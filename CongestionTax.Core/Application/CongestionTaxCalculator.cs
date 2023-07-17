@@ -1,4 +1,6 @@
-﻿namespace CongestionTax.Core.Application;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace CongestionTax.Core.Application;
 public class CongestionTaxCalculator
 {
     private TaxRuleHelper _helper = new();
@@ -17,29 +19,69 @@ public class CongestionTaxCalculator
 
     public int GetTax(Vehicle vehicle, DateTime[] dates)
     {
-        DateTime intervalStart = dates[0];
+        /*
+         We assume that all the dates that have been sent to this method are for one day. 
+         If dates of different days are sent to the method, we must first categorize them 
+         based on day. Also we assume that dates or sorted.
+        */
+
+        // First check if this is not a free of tax vehicle        
+        if (IsTollFreeVehicle(vehicle))
+            return 0;
+
         int totalFee = 0;
-        foreach (DateTime date in dates)
+        List<DateTime> dateList;
+        DateTime current;
+
+        // We use "for" instead of "foreach" because we want to traverse the list manually and check
+        // single toll tax.
+        for (int i = 0; i < dates.Length; i++)
         {
-            int nextFee = GetTollFee(date, vehicle);
-            int tempFee = GetTollFee(intervalStart, vehicle);
-
-            long diffInMillies = date.Millisecond - intervalStart.Millisecond;
-            long minutes = diffInMillies / 1000 / 60;
-
-            if (minutes <= 60)
-            {
-                if (totalFee > 0) totalFee -= tempFee;
-                if (nextFee >= tempFee) tempFee = nextFee;
-                totalFee += tempFee;
-            }
+            if (!_helper.RuleData!.SingleTollTax.Enabled)
+                totalFee += GetTollFee(dates[i], vehicle);
             else
             {
-                totalFee += nextFee;
+                // SingleTollFee rule is enabled
+                current = dates[i];
+
+                dateList = new()
+                {
+                    current
+                };
+
+                // Traverse the list and find all dates that must be calculate as a single toll tax based on
+                // current date. If we find any date, we must increase index to jump from that date beacuse
+                // that date will be calc as a single toll tax with the current date
+                while (i < dates.Length - 1 && MustCalcAsSingleTollTaxFee(current, dates[i + 1]))
+                {
+                    dateList.Add(dates[++i]);
+                }
+
+                totalFee += GetSingleTollTaxFee(vehicle, dateList);
             }
         }
-        if (totalFee > 60) totalFee = 60;
+
+        // If we have passed the max fee, return max fee
+        totalFee = _helper.RuleData!.MaxTollFee != 0 && totalFee > _helper.RuleData!.MaxTollFee ?
+            _helper.RuleData!.MaxTollFee : totalFee;
+        
         return totalFee;
+    }
+
+    private bool MustCalcAsSingleTollTaxFee(DateTime firstDate, DateTime secondDate) 
+    {
+        var timeSpan = secondDate.Subtract(firstDate);
+
+        return (timeSpan.TotalMinutes <= _helper.RuleData!.SingleTollTax.Duration);
+    }
+
+    private int GetSingleTollTaxFee(Vehicle vehicle, List<DateTime> dates)
+    {
+        List<int> taxs = new();
+        foreach (DateTime date in dates)
+            taxs.Add(GetTollFee(date, vehicle));
+
+        return _helper.RuleData!.SingleTollTax.CalcMethod.ToLower() == "max" ? taxs.Max() : taxs.Min();
     }
 
     private bool IsTollFreeVehicle(Vehicle vehicle)

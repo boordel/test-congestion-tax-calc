@@ -35,8 +35,8 @@ public class PeriodCost
 
     public int CalcCost(int hour, int minute)
     {
-        if (hour >= FromHour && minute >= FromMinute &&
-            hour <= ToHour && minute <= ToMinute)
+        if ((hour > FromHour || (hour == FromHour && minute >= FromMinute)) &&
+            (hour < ToHour || (hour == ToHour && minute <= ToMinute)))
             return Cost;
         else
             return -1;
